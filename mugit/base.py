@@ -130,5 +130,9 @@ def get_commit(oid):
     return Commit(tree=tree, parent=parent, message=message)
 
 
+def get_oid(name):
+    return data.get_ref(name) or name
+
+
 def is_ignored(path):
     return data.GIT_DIR in path.split("/")
